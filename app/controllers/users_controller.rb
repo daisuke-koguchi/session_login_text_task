@@ -7,7 +7,6 @@ class UsersController < ApplicationController
     if @user.save
       #成功
       redirect_to user_path(@user.id)
-      binding.pry
     else
       #失敗
       render :new
