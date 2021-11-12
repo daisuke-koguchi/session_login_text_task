@@ -9,7 +9,7 @@
     <td><%= blog.title %></td>
     <td><%= blog.content %></td>
     <td><%= link_to "詳細画面へ", blog_path(blog.id) %></td>
-
+    <td><%= link_to "編集画面へ", edit_blog_path(blog.id)%></td>
     <td></td>
   </tr>
   <% end %>
