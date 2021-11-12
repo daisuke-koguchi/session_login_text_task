@@ -15,7 +15,12 @@ class BlogsController < ApplicationController
       render :new
     end
   end
-  #private
+
+  def show
+    
+  end
+
+  private
   def blog_params
     params.require(:blog).permit(:title, :content)
   end
