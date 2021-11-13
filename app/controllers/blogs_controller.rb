@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   def index
-    @blog = Blog.all
+    @blogs = Blog.all
   end
 
   def new
@@ -27,6 +27,7 @@ class BlogsController < ApplicationController
   end
 
   def show  
+    @favorite = current_user.favorites.find_by(blog_id:@blog.id)
   end
   
   def edit
