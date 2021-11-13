@@ -20,9 +20,9 @@ class BlogsController < ApplicationController
       end
     end
   end
-  @blog = current_user.blogs.build(blog_params)
+
   def confirm
-    binding.irb  
+    @blog = current_user.blogs.build(blog_params)
     render :new if @blog.invalid?
   end
 
@@ -47,7 +47,7 @@ class BlogsController < ApplicationController
 
   private
   def blog_params
-    params.require(:blog).permit(:title, :content)
+    params.require(:blog).permit(:title, :content, :user_id)
   end
   def set_blog
     @blog = Blog.find(params[:id])
